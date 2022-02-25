@@ -1,0 +1,2 @@
+---
+elasticsearchHosts: "http://elk-cluster-master:9200"

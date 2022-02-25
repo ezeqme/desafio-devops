@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleapp-python-deployment
+  labels:
+    app: simpleapp-python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simpleapp-python
+  template:
+    metadata:
+      labels:
+        app: simpleapp-python
+    spec:
+      containers:
+      - name: simpleapp-python
+        image: ezequielsbarros/simpleapp-python:latest
+        envFrom:
+        - configMapRef:
+            name: simpleapp-python
+        ports:
+        - containerPort: 8008
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8008
+        initialDelaySeconds: 3
+        periodSeconds: 3

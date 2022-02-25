@@ -80,8 +80,10 @@ http://localhost:3000
 
 Acessar o grafana com os seguintes usuário e senha:
 
+```
 user: admin
 password: prom-operator
+```
 
 # Configurar stack de logs
 

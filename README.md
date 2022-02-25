@@ -31,6 +31,7 @@ $ docker push <hub-user>/<repo-name>:latest
 ```bash
 
 # instalar minikube
+# https://minikube.sigs.k8s.io/docs/start/
 $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
@@ -63,7 +64,7 @@ $ kubectl apply -f ./src-simpleapp-python-k8s-deploy/simpleapp.yml
 
 ```
 
-# Configurar monitoração no cluster via helm (Prometheus e Grafana)
+# Instalação do Prometheus/Grafana via helm
 
 ```bash
 
@@ -95,7 +96,7 @@ http://localhost:3000
 
 ```
 
-# Configurar envio dos logs da aplicação para o elasticsearch
+# Envio de logs para elasticsearch
 
 ```bash
 

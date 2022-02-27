@@ -28,6 +28,10 @@ $ docker push <hub-user>/<repo-name>:latest
 
 # Preparação do ambiente
 
+Para provisionar o ambiente escolhi o minikube para facilitar os testes localmente com algumas configurações adicionais de cpu e memória para executar todos os ambientes em conjunto (aplicação, stack de métricas/logs).
+
+Importante: você preciasa de um software de virtualização como Virtual Box para executar o minikube.
+
 ```bash
 
 # instalar minikube

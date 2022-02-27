@@ -15,17 +15,6 @@ Os arquivos do projeto estão estruturados da seguinte forma:
     ├── k8s-deploy-stack-metrics       # Arquivos de deploy do ambiente de métricas
     └── src-simpleapp-python           # Código fonte da aplicação e script para build da imagem
 
-# Build da imagem e upload para Docker Hub
-
-```bash
-
-$ cd src-simpleapp-python
-$ docker build -t simpleapp-python3 .
-$ docker tag simpleapp-python:latest <hub-user>/<repo-name>:latest
-$ docker push <hub-user>/<repo-name>:latest
-
-```
-
 # Preparação do ambiente
 
 Para provisionar o ambiente escolhi o minikube para facilitar os testes localmente com algumas configurações adicionais de cpu e memória para executar todos os ambientes em conjunto (aplicação, stack de métricas/logs).
@@ -56,6 +45,17 @@ $ minikube start
 $ vboxmanage showvminfo minikube | grep "Memory size\|Number of CPUs"
 Memory size:     8192MB
 Number of CPUs:  8
+
+```
+
+# Build da imagem e upload para Docker Hub
+
+```bash
+
+$ cd src-simpleapp-python
+$ docker build -t simpleapp-python3 .
+$ docker tag simpleapp-python:latest <hub-user>/<repo-name>:latest
+$ docker push <hub-user>/<repo-name>:latest
 
 ```
 
